@@ -33,6 +33,11 @@ public class BouncerAgent : Agent
         sensor.AddObservation(target.transform.localPosition);
     }
 
+    /*
+    BouncerAgent 의 경우 Discrete 가 아닌, Continuous 를 사용함으로써, Space size 가 Branch 가 아니라, 그대로 표현된다.
+    0,1,2 세 개의 값을 사용하면서, Float 값을 전달하기 때문에 그냥 3개로 지정하면 된다.
+    */
+
     public override void OnActionReceived(float[] vectorAction)
     {
         for (var i = 0; i < vectorAction.Length; i++)
