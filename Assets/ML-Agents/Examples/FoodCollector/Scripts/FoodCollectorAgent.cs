@@ -58,6 +58,19 @@ public class FoodCollectorAgent : Agent
         return new Color32(r, g, b, 255);
     }
 
+    
+    
+    /*
+    //OnActionReceived 에서 전달되는 파라미터 배열값은 ( 여기서 flat[] act ) 원하는게 Discrete 인지 , Continuous 인지에
+    따라 달라진다. 
+    만약 discrete 인 경우, Behavior Parameters 에서 Branches Size 로 표시된다. 
+    여기서 Branches Size 는 OnActionReceived 에서 전달받고자 하는 파라미터의 배열갯수를 의미한다. 
+    이 예제에서는 act 가 0,1,2,3 으로 4개 가 있기 때문에, Branched Size 는 4 로 적으면 된다. 
+    4를 적으면, 밑에 Branch 0 Size , Branch 1 Size 등 쭉 나오는데, 이거는 각각의 0,1,2,3 이 몇 가지의 경우를 전달해주냐를 의미한다. 
+    여기 예제를 보면, 0,1,2 는 각각 두 가지의 Case 를 가지고 있다. 마지막 경우는 하나의 케이스를 가진다. 
+    이렇게 switch case 로 나누는 경우는 내 생각인데, Default 를 포함시키는 것 같다. 
+    그래서 각각 3,3,3,2 로 브랜치 0,1,2,3 의 사이즈를 지정해주면 된다. 
+    */
     public void MoveAgent(float[] act)
     {
         m_Shoot = false;
